@@ -1,0 +1,62 @@
+{
+    "Version":{
+        "ReleaseVersion":"V1.0",
+        "TeamCreated":"S'Team Developer",
+        "ServicesName":"Middleware For Experience",
+        "VersionType":"DEV",
+        "GitBranchName":"Development"
+    },
+    "MainSetup":{
+        "APPS_ENV":"Local",
+        "ServerHost":"127.0.0.1:6661",
+        "Maxprocs":"2",
+        "AppsDebug":"debug",
+        "HttpClient":{
+            "Debug":"true",
+            "TimeOut":"60s",
+            "RetryBad":"1",
+            "RetryBadAttemp":"5"
+        },
+        "UrlPrefix":"",
+        "ProjectID":"Mid001",
+        "LOG_LEVEL":"info"
+    },
+    "Tracing":{
+        "Service":"middleware-experience",
+        "Host":"127.0.0.1:6661",
+        "User":"",
+        "Pass":"",
+        "Logs":"",
+        "MaxQueue":"100"
+    },
+    "ExternalRouting":{
+        "AccountingPortal":{
+            "Host":"http://127.0.0.1:8666",
+            "Version":{
+                "V1":"/V1"
+            },
+            "Header":[
+                {
+                    "Path": "Accept-Encoding",
+                    "Value": "gzip, deflate, br"
+                },
+                {
+                    "Path": "Content-Type",
+                    "Value": "application/json"
+                }
+            ],
+            "Endpoint":{
+                "EAccPortalAccount":{
+                    "AccountLogin":{
+                        "Url":"/e-accounting/account/login",
+                        "Method":"POST"
+                    },
+                    "ProfileByUsername":{
+                        "Url":"/e-accounting/account/profile/username",
+                        "Method":"POST"
+                    }
+                }
+            }
+        }
+    }
+}
